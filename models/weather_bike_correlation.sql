@@ -6,7 +6,7 @@ WITH CTE AS(
     w.*
     from {{ ref('trip_fact') }} t
     left join {{ ref('daily_weather') }} w
-    on t.TRIP_DATE = w.DAILY_WEATHER
+    on t.TRIP_DATE = w.WEATHER_DATE2
 )
 
 select * from CTE
